@@ -1,9 +1,9 @@
 //Parameters
 param virtual_network_name string
 param location string
-param address_prefix array
-param dns_servers array
-param subnets array
+param virtual_network_address_space array
+param virtual_network_dns_servers array
+param virtual_network_subnets array
 param tags object
 
 //Resource
@@ -13,14 +13,14 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
   tags: tags
   properties: {
     dhcpOptions:{
-      dnsServers: dns_servers
+      dnsServers: virtual_network_dns_servers
     }
     addressSpace: {
-      addressPrefixes: address_prefix
+      addressPrefixes: virtual_network_address_space
     }
     enableVmProtection: false
     enableDdosProtection: false
-    subnets: subnets
+    subnets: virtual_network_subnets
   }
 }
 
