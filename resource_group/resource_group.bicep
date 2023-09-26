@@ -2,13 +2,13 @@
 targetScope = 'subscription'
 
 // Parameters
-param rgName string
+param resource_group_name string
 param location string
 param tags object
 
 // Resource
 resource resource_group 'Microsoft.Resources/resourceGroups@2020-06-01' = {
-  name: rgName
+  name: resource_group_name
   location: location
   tags: tags
 }
