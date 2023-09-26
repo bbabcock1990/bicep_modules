@@ -1,5 +1,5 @@
 //Paramaters
-param name string
+param hostpool_name string
 param personal_desktop bool
 param hostpool_friendly_name string
 param hostpool_description string
@@ -12,7 +12,7 @@ var expirationTime = dateTimeAdd(date, 'PT8H')
 
 //Resource
 resource hostpool 'Microsoft.DesktopVirtualization/hostpools@2019-12-10-preview' = {
-  name: name
+  name: hostpool_name
   location: location
   tags: tags
   properties: {
