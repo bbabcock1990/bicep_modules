@@ -15,5 +15,6 @@ resource resource_group 'Microsoft.Resources/resourceGroups@2020-06-01' = {
 
 
 // Outputs
-output resourceGroupId string = resource_group.id // output resourceId of storage account
-output resourceGroupName string = resource_group.name // output name of storage account
+output resource_group_id string = resource_group.id
+output resource_group_name string = resource_group.name
+output resource_group_location string = resource_group.location
