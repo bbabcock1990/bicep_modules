@@ -29,3 +29,4 @@ resource vnet 'Microsoft.Network/virtualNetworks@2020-06-01' = {
 output virtual_network_id string = vnet.id // output resourceId of virtual network
 output virtual_network_name string = vnet.name // output name of storage account
 output virtual_network_resource_group_name string = split(vnet.id,'/')[3]
+output virtual_network_subnet_names array = virtual_network_subnets
