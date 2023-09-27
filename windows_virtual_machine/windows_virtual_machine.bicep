@@ -6,7 +6,7 @@ param vm_image_publisher string
 param vm_image_offer string
 param vm_windows_os_version string 
 param vm_size string
-param disk_size int
+param vm_disk_size int
 param vm_name string
 param vm_admin_username string
 @secure()
@@ -65,7 +65,7 @@ resource vm 'Microsoft.Compute/virtualMachines@2020-06-01' = [for i in range(0,c
       }
       dataDisks: [
         {
-          diskSizeGB: disk_size
+          diskSizeGB: vm_disk_size
           lun: 0
           createOption: 'Empty'
           name: '${vm_name}${i}-datadisk01'
