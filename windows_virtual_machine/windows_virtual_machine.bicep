@@ -62,6 +62,9 @@ resource vm 'Microsoft.Compute/virtualMachines@2020-06-01' = [for i in range(0,c
       osDisk: {
         createOption: 'FromImage'
         name: '${vm_name}${i}-osdisk'
+        diffDiskSettings:{
+          option:'Local'
+        }
       }
       dataDisks: [
         {
